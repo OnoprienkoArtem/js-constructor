@@ -1,1 +1,1 @@
-console.log('rrr');
+import './styles/main.css';
