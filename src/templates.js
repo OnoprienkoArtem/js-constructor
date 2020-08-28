@@ -17,9 +17,9 @@ function text(block) {
 }
 
 function textColumns(block) {
-    const html = block.value.map(item => `<div class="col-sm">${ block.value }</div>`);
-    
-    return row(html.join(''));    
+    const html = block.value.map(item => `<div class="col-sm">${ item }</div>`);
+
+    return row(html.join(' '));    
 }
 
 export const templates = { title, text, textColumns };
