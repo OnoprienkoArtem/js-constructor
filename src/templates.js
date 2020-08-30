@@ -1,25 +1,17 @@
-import { row } from './utils';
+import { row, col } from './utils';
 
 function title(block) {
-    return row(`        
-        <div class="col-sm">
-            <h1>${ block.value }</h1>
-        </div>       
-    `)
+    return row(col(`<h1>${ block.value }</h1>`));
 }
 
 function text(block) {
-    return row(`        
-        <div class="col-sm">
-            <p>${ block.value }</p>
-        </div>        
-    `)
+    return row(col(`<p>${ block.value }</p>`));
 }
 
 function textColumns(block) {
-    const html = block.value.map(item => `<div class="col-sm">${ item }</div>`);
+    const html = block.value.map(item => col(item));
 
-    return row(html.join(' '));    
+    return row(html.join(''));    
 }
 
 export const templates = { title, text, textColumns };
