@@ -1,17 +1,19 @@
 import { row, col } from './utils';
 
 function title(block) {
-    return row(col(`<h1>${ block.value }</h1>`));
+    const { tag, styles } = block.options;   
+
+    return row(col(`<${tag}>${ block.value }</${tag}>`), styles);
 }
 
 function text(block) {
-    return row(col(`<p>${ block.value }</p>`));
+    return row(col(`<p style="margin-bottom: 0;">${ block.value }</p>`), block.options.styles);
 }
 
 function textColumns(block) {
     const html = block.value.map(item => col(item));
 
-    return row(html.join(''));    
+    return row(html.join(''), block.options.styles);    
 }
 
 export const templates = { title, text, textColumns };
