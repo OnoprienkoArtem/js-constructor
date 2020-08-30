@@ -1,6 +1,6 @@
-import { row, col } from './utils';
+import { row, col } from '../utils';
 
-export class Block {
+class Block {
     constructor(value, options) {
         this.value = value;
         this.options = options;
@@ -13,7 +13,7 @@ export class Block {
 
 export class TitleBlock extends Block {
     constructor(value, options) {
-        super('title', value, options);
+        super(value, options);
     }
 
     toHTML() {
