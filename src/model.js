@@ -1,12 +1,18 @@
 import image from './assets/javascript.jpeg';
 import {TitleBlock, ImageBlock, TextBlock, TextColumnsBlock} from './classes/blocks';
+import { css } from './utils';
 
 export const model = [
     new TitleBlock(        
         'Test title',
         {
             tag: 'h2',
-            styles: 'background: silver; color: #fff; text-align: center; padding: 1.5rem;'
+            styles: css({
+                background: 'silver',
+                color: '#fff',
+                textAlign: 'center',
+                padding: '1.5rem',
+            })
         }
     ),
     new ImageBlock(

@@ -1,17 +1,10 @@
 import { model } from './model';
-import { templates } from './templates';
-
+import { Site } from './classes/site';
 import './styles/main.css';
 
-const site = document.querySelector('#site');
 
-model.forEach(block => {
+const site = new Site('#site');
 
-    site.insertAdjacentHTML('beforeend', block.toHTML());
-    // const generate = templates[block.type];
-    
-    // if (generate) {
-    //     const html = generate(block);
-    //     site.insertAdjacentHTML('beforeend', html);
-    // }    
-});
+
+
+site.render(model);
