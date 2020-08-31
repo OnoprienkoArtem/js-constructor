@@ -1,5 +1,5 @@
 import image from './assets/javascript.jpeg';
-import {TitleBlock, ImageBlock, TextBlock, TextColumnsBlock} from './classes/blocks';
+import { TitleBlock, ImageBlock, TextBlock, TextColumnsBlock } from './classes/blocks';
 import { css } from './utils';
 
 export const model = [
@@ -10,7 +10,7 @@ export const model = [
             styles: css({
                 background: 'silver',
                 color: '#fff',
-                textAlign: 'center',
+                'text-align': 'center',
                 padding: '1.5rem',
             })
         }
@@ -18,7 +18,11 @@ export const model = [
     new ImageBlock(
         image,
         {
-            styles: 'padding: 2rem 0; display: flex; justify-content: center;',
+            styles: css({
+                padding: '2rem 0',
+                display: flex,
+                'justify-content': center,
+            }),
             alt: 'my image',
             imageStyles: 'width: 500px; height: auto'
         }
@@ -26,13 +30,19 @@ export const model = [
     new TextBlock(
         'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
         {
-            styles: 'background: tomato; color: black;'
+            styles: css({
+                background: 'tomato',
+                color: 'black',
+            }),
         }
     ),
     new TextColumnsBlock(
         ['1. Lorem ipsum dolor sit amet', '2. Lorem ipsum dolor sit amet', '3. Lorem ipsum dolor sit amet'],
         {
-            styles: 'padding: 2rem 0; color: gray;'
+            styles: css({
+                padding: '2rem 0',
+                color: 'gray',
+            }),
         }
     )
 ];
